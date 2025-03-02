@@ -29,7 +29,7 @@ async function categorizeExpense(text) {
     ", "
   )} from ${text}.
   Example: "Spent 100Rs in Briyani" → {"amount": 100, "category": "Food & Drinks"}
-  Return JSON only.`;
+  Return JSON only. Also validate the prompt if there is no amount present or return { amount: 0, category: "Unknown" }`;
 
   try {
     const response = await openai.chat.completions.create({
