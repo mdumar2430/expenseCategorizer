@@ -28,6 +28,7 @@ async function categorizeExpense(text) {
   const prompt = `Extract the amount and match it to one of these categories: ${allowedCategories.join(
     ", "
   )} from ${text}.
+  Use Indian contextual based understanding during classification and mapping it with the expenses.
   Example: "Spent 100Rs in Briyani" → {"amount": 100, "category": "Food & Drinks"}
   Return JSON only. Also validate the prompt if there is no amount present or return { amount: 0, category: "Unknown" }`;
 
