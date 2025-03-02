@@ -27,8 +27,13 @@ const ExpenseCategorizer = () => {
         "https://expensecategorizer.onrender.com/categorize", 
         { text }
       );
-      setExpenses([...expenses, { text, ...response.data }]);
-      setText("");
+      if(response.data.category == "Unknown"){
+        alert("Invalid Prompt. Sample Prompt: Bus ticket 100Rs")
+      }
+      else{ 
+          setExpenses([...expenses, { text, ...response.data }]);
+          setText("");
+      }
     } catch (error) {
       console.error("Error categorizing expense", error);
     }
