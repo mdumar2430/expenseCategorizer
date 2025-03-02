@@ -24,7 +24,7 @@ const ExpenseCategorizer = () => {
     
     try {
       const response = await axios.post<{ amount: number; category: string }>(
-        "http://localhost:3000/categorize", 
+        "https://expensecategorizer.onrender.com/categorize", 
         { text }
       );
       setExpenses([...expenses, { text, ...response.data }]);
